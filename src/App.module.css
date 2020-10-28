@@ -1,0 +1,12 @@
+.App {
+/*    !*display: flex;*!*/
+/*    align-content: center;*/
+/*    align-content: space-between;*/
+    justify-content: center;
+  /*text-align: center;*/
+    margin: auto;
+/*    padding: 5px;*/
+/*  align-items: flex-start;*/
+}
+
+

@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import s from './App.module.css';
+import UncontrolledOnOff from './components/OnOff/UncontrolledOnOff';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import Accordion from './components/Accordion/Accordion';
+import {Rating, RatingValueType} from './components/Rating/Rating';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import OnOff from './components/OnOff/OnOff';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import Accordion from './'
+
+
+function App (props: any) {
+	
+	let [ratingValue, setRatingValue] = useState<RatingValueType> (0);
+	let [accordionCollapsed, setAccordionCollapsed] = useState<boolean> (true);
+	let [ on, setOn ] = useState<boolean> ( false );
+	let [ switchOn, setSwitchOn ] = useState<boolean> ( false );
+	
+	
+	return (<div className={s.App}>
+		{/*<OnOff value={on} onClick={setOn}/>*/}
+		<UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
+		{/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
+		<Accordion titleValue={'Menu'} value={accordionCollapsed} onClick={setAccordionCollapsed}/>
+		<UncontrolledRating/>
+		<Rating value={ratingValue}
+				onClick={setRatingValue}/>
+				
+				
+		{/*<Rating value={ 0 }/>*/}
+		{/*<Rating value={ 1 }/>*/}
+		{/*<Rating value={ 2 }/>*/}
+		
+		{/*<Rating value={ 4 }/>*/}
+		{/*<Rating value={ 5 }/>*/}
+	</div>);
 }
+
+// type PageTitlePropsType = {
+// 	title: string
+// }
 
 export default App;
