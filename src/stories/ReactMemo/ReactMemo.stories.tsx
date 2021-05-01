@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Accordion} from '../Accordion/Accordion';
+import {Accordion} from '../../components/Accordion/Accordion';
 
 export default {
     title: 'ReactMemo'

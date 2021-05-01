@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from 'react';
 
 export default {
-    title: 'UseMemo'
+    title: 'UseMemo_UseCallback'
 };
 export const DifficultCountingExample = () => {
     const [a, setA] = useState<number>(0);
